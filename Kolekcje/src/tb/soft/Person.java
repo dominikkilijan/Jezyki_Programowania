@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Comparator;
 
 
 /*
@@ -93,7 +94,8 @@ public class Person implements Comparable<Person>{
 		job = PersonJob.UNKNOWN;
 	}
 
-	
+
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -214,6 +216,10 @@ public class Person implements Comparable<Person>{
 	}
 	@Override
 	public int compareTo(Person person) {
-		return this.firstName.compareTo(person.getFirstName());
+		//Porównuje imię, a potem nazwisko
+		return Comparator.comparing(Person::getFirstName)
+				.thenComparing(Person::getLastName)
+				.compare(this, person);
+
 	}
 }  // koniec klasy Person

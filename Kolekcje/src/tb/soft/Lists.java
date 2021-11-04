@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Lists implements IColletionMethods{
 
-    ArrayList<Person> arrayList = new ArrayList<Person>(10);
-    LinkedList<Person> linkedList = new LinkedList<Person>();
+    ArrayList<Person> arrayList = new ArrayList<>(10);
+    LinkedList<Person> linkedList = new LinkedList<>();
 
     @Override
     public void addPersonToCollections(Person person) {
@@ -21,15 +21,15 @@ public class Lists implements IColletionMethods{
     }
     @Override
     public void iterateCollections() {
-        System.out.println("HashSet:");
-        for (Person integer : arrayList)
+        System.out.println("ArrayList:");
+        for (Person person : arrayList)
         {
-            System.out.println(integer);
+            System.out.println(person);
         }
-        System.out.println("TreeSet:");
-        for (Person integer : linkedList)
+        System.out.println("Linked List:");
+        for (Person person : linkedList)
         {
-            System.out.println(integer);
+            System.out.println(person);
         }
     }
 

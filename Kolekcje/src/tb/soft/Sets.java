@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Sets implements Comparable, IColletionMethods {
+public class Sets implements IColletionMethods {
     Set<Person> hashSet = new HashSet<>();
     Set<Person> treeSet = new TreeSet<>();
 
@@ -21,22 +21,14 @@ public class Sets implements Comparable, IColletionMethods {
     @Override
     public void iterateCollections() {
         System.out.println("HashSet:");
-        for (Person integer : hashSet)
+        for (Person person : hashSet)
         {
-            System.out.println(integer);
+            System.out.println(person);
         }
         System.out.println("TreeSet:");
-        for (Person integer : treeSet)
+        for (Person person : treeSet)
         {
-            System.out.println(integer);
+            System.out.println(person);
         }
     }
-
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
-    }
-
-
 }

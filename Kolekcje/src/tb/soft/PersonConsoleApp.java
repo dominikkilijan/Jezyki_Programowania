@@ -43,12 +43,17 @@ public class PersonConsoleApp {
 	private static final ConsoleUserDialog UI = new ConsoleUserDialog();
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		// Utworzenie obiektu aplikacji konsolowej
 		// oraz uruchomienie głównej pętli aplikacji.
-		PersonConsoleApp application = new PersonConsoleApp();
-		application.runMainLoop();
-	} 
+
+
+		//PersonConsoleApp application = new PersonConsoleApp();
+		//application.runMainLoop();
+
+		Scenarios scenarios = new Scenarios();
+		scenarios.addTheSameObjects();
+	}
 
 	
 	/*
@@ -82,6 +87,7 @@ public class PersonConsoleApp {
 					UI.printInfoMessage("Dane aktualnej osoby zostały usunięte");
 					break;
 				case 3:
+
 					// zmiana danych dla aktualnej osoby
 					if (currentPerson == null) throw new PersonException("Żadna osoba nie została utworzona.");
 					changePersonData(currentPerson);
