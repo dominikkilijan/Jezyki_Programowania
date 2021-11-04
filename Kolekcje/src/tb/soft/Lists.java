@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Lists implements IColletionMethods{
 
-    ArrayList<Person> arrayList = new ArrayList<>(10);
-    LinkedList<Person> linkedList = new LinkedList<>();
+    List<Person> arrayList = new ArrayList<>(5);
+    List<Person> linkedList = new LinkedList<>();
 
     @Override
     public void addPersonToCollections(Person person) {
@@ -31,6 +31,18 @@ public class Lists implements IColletionMethods{
         {
             System.out.println(person);
         }
+        System.out.println();
+    }
+    public void setPersonToCollections(int index, Person person) {
+        arrayList.set(index, person);
+        linkedList.set(index, person);
+    }
+    public void checkSize() {
+        System.out.println("Array List:");
+        System.out.println(arrayList.size());
+        System.out.println("Linked List:");
+        System.out.println(linkedList.size());
+        System.out.println("\n");
     }
 
 
