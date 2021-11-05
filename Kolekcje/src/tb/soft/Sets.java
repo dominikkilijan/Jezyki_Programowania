@@ -25,6 +25,7 @@ public class Sets implements IColletionMethods {
         {
             System.out.println(person);
         }
+        System.out.println();
         System.out.println("TreeSet:");
         for (Person person : treeSet)
         {

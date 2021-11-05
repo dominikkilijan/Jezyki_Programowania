@@ -24,6 +24,9 @@ public class PersonConsoleApp {
 			"3 - Modyfikuj dane osoby   \n" +
 			"4 - Wczytaj dane z pliku   \n" +
 			"5 - Zapisz dane do pliku   \n" +
+					"6 - Operacje na Setach   \n" +
+					"7 - Operacje na Listach   \n" +
+					"8 - Operacje na Mapach   \n" +
 			"0 - Zakończ program        \n";	
 	
 	private static final String CHANGE_MENU = 
@@ -48,11 +51,13 @@ public class PersonConsoleApp {
 		// oraz uruchomienie głównej pętli aplikacji.
 
 
-		//PersonConsoleApp application = new PersonConsoleApp();
-		//application.runMainLoop();
+		PersonConsoleApp application = new PersonConsoleApp();
+		application.runMainLoop();
 
-		Scenarios scenarios = new Scenarios();
-		scenarios.addTheSameObjects();
+		//Scenarios scenarios = new Scenarios();
+		//scenarios.workingOnSets();
+		//scenarios.workingOnLists();
+		//scenarios.workingOnMaps();
 	}
 
 	
@@ -68,7 +73,7 @@ public class PersonConsoleApp {
 	 *         w której program się zatrzymuje aż do zakończenia
 	 *         działania za pomocą metody System.exit(0); 
 	 */
-	public void runMainLoop() {
+	public void runMainLoop() throws Exception {
 		UI.printMessage(GREETING_MESSAGE);
 
 		while (true) {
@@ -105,6 +110,34 @@ public class PersonConsoleApp {
 					Person.printToFile(file_name, currentPerson);
 					UI.printInfoMessage("Dane aktualnej osoby zostały zapisane do pliku " + file_name);
 				}
+
+					break;
+					case 6: {
+						// Operacje na Setach
+						Scenarios scenarios = new Scenarios();
+						scenarios.workingOnSets();
+					}
+
+					break;
+					case 7: {
+						// Operacje na Listach
+						Scenarios scenarios = new Scenarios();
+						scenarios.workingOnLists();
+					}
+
+					break;
+					case 8: {
+						// Operacje na Mapach
+						Scenarios scenarios = new Scenarios();
+						scenarios.workingOnMaps();
+					}
+
+					break;
+					case 9: {
+						// Działanie kolekcji przy zdefiniowanych metodach equals() i hashCode() na przykładzie Setów
+						//Scenarios scenarios = new Scenarios();
+						//scenarios.workingOnMaps();
+					}
 
 					break;
 				case 0:

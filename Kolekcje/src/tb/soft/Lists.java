@@ -26,6 +26,7 @@ public class Lists implements IColletionMethods{
         {
             System.out.println(person);
         }
+        System.out.println();
         System.out.println("Linked List:");
         for (Person person : linkedList)
         {
