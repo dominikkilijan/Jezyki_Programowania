@@ -24,9 +24,11 @@ public class PersonConsoleApp {
 			"3 - Modyfikuj dane osoby   \n" +
 			"4 - Wczytaj dane z pliku   \n" +
 			"5 - Zapisz dane do pliku   \n" +
-					"6 - Operacje na Setach   \n" +
-					"7 - Operacje na Listach   \n" +
-					"8 - Operacje na Mapach   \n" +
+			"6 - Operacje na Setach   \n" +
+			"7 - Operacje na Listach   \n" +
+			"8 - Operacje na Mapach   \n" +
+			"9 - Operacje na Setach z equals() i hashCode()   \n" +
+			"10 - Operacje na Mapach z equals() i hashCode()   \n" +
 			"0 - Zakończ program        \n";	
 	
 	private static final String CHANGE_MENU = 
@@ -135,8 +137,15 @@ public class PersonConsoleApp {
 					break;
 					case 9: {
 						// Działanie kolekcji przy zdefiniowanych metodach equals() i hashCode() na przykładzie Setów
-						//Scenarios scenarios = new Scenarios();
-						//scenarios.workingOnMaps();
+						ScenariosOver scenariosOver = new ScenariosOver();
+						scenariosOver.workingOnSets();
+					}
+
+					break;
+					case 10: {
+						// Działanie kolekcji przy zdefiniowanych metodach equals() i hashCode() na przykładzie Setów
+						ScenariosOver scenariosOver = new ScenariosOver();
+						scenariosOver.workingOnMaps();
 					}
 
 					break;

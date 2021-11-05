@@ -58,7 +58,7 @@ enum PersonJob {
  */
 class PersonException extends Exception {
 
-	private static final long serialVersionUID = 1L;
+	protected static final long serialVersionUID = 1L;
 
 	public PersonException(String message) {
 		super(message);
@@ -82,11 +82,11 @@ class PersonException extends Exception {
  * zawierający stosowny komunikat.
  */
 public class Person implements Comparable<Person>{
-	
-	private String firstName;
-	private String lastName;
-	private int birthYear;
-	private PersonJob job;
+
+	protected String firstName;
+	protected String lastName;
+	protected int birthYear;
+	protected PersonJob job;
  
 	
 	public Person(String first_name, String last_name) throws PersonException {
@@ -94,6 +94,7 @@ public class Person implements Comparable<Person>{
 		setLastName(last_name);
 		job = PersonJob.UNKNOWN;
 	}
+
 
 
 

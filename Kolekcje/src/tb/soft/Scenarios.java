@@ -6,7 +6,7 @@ public class Scenarios{
         this.lists = new Lists();
         this.maps = new Maps();
         this.person1 = new Person("Jan", "Nowak");
-        person1.setBirthYear(2000);
+        person1.setBirthYear(2001);
         this.person2 = new Person("Adam", "Nowak");
         person2.setBirthYear(1954);
         this.person3 = new Person("Damian", "Kowalski");
@@ -33,6 +33,7 @@ public class Scenarios{
         sets.addPersonToCollections(person3);
         sets.addPersonToCollections(person4);
         sets.addPersonToCollections(person5);
+        sets.addPersonToCollections(person1);
         sets.addPersonToCollections(person1);
         sets.iterateCollections();
         System.out.println("W HashSet nie ma zdefiniowanech metod equals() oraz hashCode() więc Adam Nowak " +
