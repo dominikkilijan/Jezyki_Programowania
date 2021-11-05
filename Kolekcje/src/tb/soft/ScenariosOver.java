@@ -27,14 +27,12 @@ public class ScenariosOver{
 
     public void workingOnSets() {
         System.out.println("Dodajemy pięć osób: Jana Nowaka, Adama Nowaka, Damiana Kowalskiego, " +
-                "Adama Nowaka (taki sam element), Adama Lewandowskiego i ponownie Jana Nowaka \n");
+                "Adama Nowaka (taki sam element) i Adama Lewandowskiego \n");
         sets.addPersonToCollections(person1);
         sets.addPersonToCollections(person2);
         sets.addPersonToCollections(person3);
         sets.addPersonToCollections(person4);
         sets.addPersonToCollections(person5);
-        sets.addPersonToCollections(person1);
-        sets.addPersonToCollections(person1);
         sets.iterateCollections();
         System.out.println("hashSet() i equals() są zdefinowane więc Adam Nowak nie wyświetla się drugi raz.");
         System.out.println("W TreeSet kolejność wyznaczana jest po imieniu, a potem nazwisku\n\n");
@@ -44,13 +42,12 @@ public class ScenariosOver{
     }
     public void workingOnMaps() {
         System.out.println("Dodajemy pięć osób: Jana Nowaka, Adama Nowaka, Damiana Kowalskiego, " +
-                "Adama Nowaka (taki sam element), Adama Lewandowskiego i ponownie Jana Nowaka \n");
+                "Adama Nowaka (taki sam element) i Adama Lewandowskiego \n");
         maps.addPersonToCollections(person1,person1.getBirthYear());
         maps.addPersonToCollections(person2,person2.getBirthYear());
         maps.addPersonToCollections(person3,person3.getBirthYear());
         maps.addPersonToCollections(person4,person4.getBirthYear());
         maps.addPersonToCollections(person5,person5.getBirthYear());
-        maps.addPersonToCollections(person1,person1.getBirthYear());
         maps.printMaps();
         System.out.println("hashSet() i equals() są zdefinowane więc Adam Nowak nie wyświetla się drugi raz.");
         System.out.println("Sprawdzamy rok urodzenia Adama Lewandowskiego: "+ maps.hashMap.get(person5));
