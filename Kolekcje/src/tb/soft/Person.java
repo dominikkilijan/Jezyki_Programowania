@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Comparator;
+import java.util.Objects;
 
 
 /*
@@ -214,6 +215,9 @@ public class Person implements Comparable<Person>{
 			throw new PersonException("Wystąpił błąd podczas odczytu danych z pliku.");
 		}	
 	}
+
+
+
 	@Override
 	public int compareTo(Person person) {
 		//Porównuje imię, a potem nazwisko
