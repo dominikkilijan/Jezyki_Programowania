@@ -4,8 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
-import java.util.Map;
 
 public class LoginWindow extends JFrame implements ActionListener {
 
@@ -17,7 +15,7 @@ public class LoginWindow extends JFrame implements ActionListener {
     JLabel passwordLabel = new JLabel("Password");
 
     JTextField loginField = new JFormattedTextField();
-    JTextField passwordField = new JTextField();
+    JTextField passwordField = new JPasswordField();
 
 
 
@@ -59,7 +57,7 @@ public class LoginWindow extends JFrame implements ActionListener {
         } else if (actionEvent.getSource().equals(loginButton)) {
             String userlog = loginField.getText();
             String userpass = passwordField.getText();
-            System.out.println(userlog + " " + userpass);
+            //System.out.println(userlog + " " + userpass);
             changeBackgroundColor(userlog, userpass);
         }
     }
@@ -67,7 +65,7 @@ public class LoginWindow extends JFrame implements ActionListener {
     void changeBackgroundColor(String userlogin, String userpassword) {
         HardcodedMap hardcodedMap = new HardcodedMap();
         if (hardcodedMap.map.containsKey(userlogin) && hardcodedMap.map.containsValue(userpassword)) {
-            System.out.println("Dziala");
+            //System.out.println("Dziala");
             backgroundPanel.setBackground(Color.GREEN);
         }
         else backgroundPanel.setBackground(Color.RED);

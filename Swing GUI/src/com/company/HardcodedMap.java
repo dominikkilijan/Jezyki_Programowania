@@ -1,6 +1,7 @@
 package com.company;
 
 
+import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,7 +14,5 @@ public class HardcodedMap {
         map.put("aaa","ddd");
     }
 
-
-
-
 }
+
