@@ -1,10 +1,19 @@
 package com.company;
 
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class HardcodedMap {
 
-    Users user1;
+    Map<String, String> map = new HashMap<>();
 
     HardcodedMap() {
-        this.user1 = new Users("dom","kil");
+        map.put("aa", "dd");
+        map.put("aaa","ddd");
     }
+
+
+
+
 }
