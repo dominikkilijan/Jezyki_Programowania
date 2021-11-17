@@ -57,15 +57,14 @@ public class LoginWindow extends JFrame implements ActionListener {
         } else if (actionEvent.getSource().equals(loginButton)) {
             String userlog = loginField.getText();
             String userpass = passwordField.getText();
-            //System.out.println(userlog + " " + userpass);
             changeBackgroundColor(userlog, userpass);
         }
     }
 
     void changeBackgroundColor(String userlogin, String userpassword) {
         HardcodedMap hardcodedMap = new HardcodedMap();
-        if (hardcodedMap.map.containsKey(userlogin) && hardcodedMap.map.containsValue(userpassword)) {
-            //System.out.println("Dziala");
+        if (hardcodedMap.map.containsKey(userlogin) && hardcodedMap.map.get(userlogin).equals(userpassword)) {
+            System.out.println(hardcodedMap.map.containsKey(userlogin));
             backgroundPanel.setBackground(Color.GREEN);
         }
         else backgroundPanel.setBackground(Color.RED);
