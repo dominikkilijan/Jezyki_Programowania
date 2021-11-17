@@ -64,7 +64,6 @@ public class LoginWindow extends JFrame implements ActionListener {
     void changeBackgroundColor(String userlogin, String userpassword) {
         HardcodedMap hardcodedMap = new HardcodedMap();
         if (hardcodedMap.map.containsKey(userlogin) && hardcodedMap.map.get(userlogin).equals(userpassword)) {
-            System.out.println(hardcodedMap.map.containsKey(userlogin));
             backgroundPanel.setBackground(Color.GREEN);
         }
         else backgroundPanel.setBackground(Color.RED);
