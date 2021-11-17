@@ -15,7 +15,7 @@ public class LoginWindow extends JFrame implements ActionListener {
     JLabel passwordLabel = new JLabel("Password");
 
     JTextField loginField = new JFormattedTextField();
-    JPasswordField passwordField = new JPasswordField();
+    JTextField passwordField = new JPasswordField();
 
 
 
@@ -56,7 +56,7 @@ public class LoginWindow extends JFrame implements ActionListener {
             System.exit(0);
         } else if (actionEvent.getSource().equals(loginButton)) {
             String userlog = loginField.getText();
-            String userpass = String.valueOf(passwordField.getPassword());
+            String userpass = passwordField.getPassword();
             changeBackgroundColor(userlog, userpass);
         }
     }
