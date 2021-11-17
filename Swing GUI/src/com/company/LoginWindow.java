@@ -5,12 +5,12 @@ import java.awt.*;
 
 public class LoginWindow extends JFrame {
 
-    JFrame frame = new JFrame();
+
     JButton loginButton = new JButton("Login");
     JButton cancelButton = new JButton("Cancel");
     JPanel backgroundPanel = new JPanel();
-    JLabel user = new JLabel("User");
-    JLabel password = new JLabel("Password");
+    JLabel userLabel = new JLabel("User");
+    JLabel passwordLabel = new JLabel("Password");
 
     JTextField loginField = new JFormattedTextField();
     JPasswordField passwordField = new JPasswordField();
@@ -18,24 +18,30 @@ public class LoginWindow extends JFrame {
 
     LoginWindow() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //frame.setSize(500,400);
+        this.setSize(300,200);
         this.add(backgroundPanel);
 
-        //backgroundPanel.setLayout(new FlowLayout());
-        backgroundPanel.setBackground(Color.lightGray);
+        backgroundPanel.setBackground(Color.white);
+        backgroundPanel.setLayout(null);
 
-        backgroundPanel.add(user);
+
+        backgroundPanel.add(userLabel);
         backgroundPanel.add(loginField);
-        loginField.setPreferredSize(new Dimension(100,25));
+        userLabel.setBounds(10,20,80,25);
+        loginField.setBounds(100,20,165,25);
 
-        backgroundPanel.add(password);
+
+        backgroundPanel.add(passwordLabel);
         backgroundPanel.add(passwordField);
-        passwordField.setPreferredSize(new Dimension(100,25));
+        passwordLabel.setBounds(10,55,80,25);
+        passwordField.setBounds(100,55,165,25);
 
         backgroundPanel.add(loginButton);
         backgroundPanel.add(cancelButton);
+        loginButton.setBounds(50,110,80,25);
+        cancelButton.setBounds(150, 110,80,25);
 
-        this.pack();
+
         this.setVisible(true);
     }
 
