@@ -2,10 +2,12 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class LoginWindow extends JFrame {
+public class LoginWindow extends JFrame implements ActionListener {
 
-
+    JFrame frame = new JFrame();
     JButton loginButton = new JButton("Login");
     JButton cancelButton = new JButton("Cancel");
     JPanel backgroundPanel = new JPanel();
@@ -17,9 +19,9 @@ public class LoginWindow extends JFrame {
 
 
     LoginWindow() {
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(300,200);
-        this.add(backgroundPanel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(300,200);
+        frame.add(backgroundPanel);
 
         backgroundPanel.setBackground(Color.white);
         backgroundPanel.setLayout(null);
@@ -39,10 +41,19 @@ public class LoginWindow extends JFrame {
         backgroundPanel.add(loginButton);
         backgroundPanel.add(cancelButton);
         loginButton.setBounds(50,110,80,25);
+        loginButton.addActionListener(this);
         cancelButton.setBounds(150, 110,80,25);
+        cancelButton.addActionListener(this);
 
 
-        this.setVisible(true);
+        frame.setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+        if (actionEvent.getSource().equals(cancelButton)) {
+            System.exit(0);
+        }
     }
 
     /*void changeBackgroundColor() {
