@@ -1,7 +1,6 @@
 package com.company;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -10,6 +9,7 @@ public class Window extends JFrame {
     JButton runButton = new JButton("Run");
     JButton cancelButton = new JButton("Cancel");
     JPanel buttonPanel = new JPanel();
+    Integer i=0;
 
     Window() {
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -19,20 +19,34 @@ public class Window extends JFrame {
 
         frame.add(runButton);
         runButton.setBounds(20,400,80,25);
+        runButton.setFocusable(false);
         runButton.add(buttonPanel);
-        buttonPanel.setBackground(Color.GRAY);
-        buttonPanel.setLayout(new GridLayout());
-        buttonPanel.setSize(60,25);
+        buttonPanel.setOpaque(false);
+        runButton.setLayout(null);
+        buttonPanel.setBounds(2,2,70,25);
         buttonPanel.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
                 super.mouseEntered(e);
-                int i;
-
-                runButton.setLocation(frame.getMousePosition());
+                i++;
+                switch (i % 4) {
+                    case 0 -> runButton.setLocation(20, 20);
+                    case 1 -> runButton.setLocation(400, 20);
+                    case 2 -> runButton.setLocation(400, 300);
+                    case 3 -> runButton.setLocation(20, 300);
+                }
+                //runButton.setLocation(frame.getMousePosition());
+            }
+        });
+        runButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                System.out.println("*Click!*");
             }
         });
         frame.add(cancelButton);
+        cancelButton.setFocusable(false);
         cancelButton.setBounds(350,400,80,25);
         cancelButton.addMouseListener(new MouseAdapter() {
             @Override
