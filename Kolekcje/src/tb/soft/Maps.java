@@ -12,7 +12,6 @@ public class Maps{
     public void addPersonToCollections(Person person, Integer integer) {
        hashMap.put(person, integer);
        treeMap.put(person, integer);
-//k
     }
 
     public void removePersonFromCollections(Person person) {
