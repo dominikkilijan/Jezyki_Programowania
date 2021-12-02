@@ -1,6 +1,8 @@
 package com.company;
 
 import javax.swing.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -18,6 +20,14 @@ public class Window extends JFrame {
         frame.setResizable(false);
 
         frame.add(canvas);
+        canvas.setFocusable(true);
+        canvas.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                canvas.shapeDrawing.setShape(e.getKeyChar());
+                System.out.println(canvas.shapeDrawing.getShape());
+            }
+        });
         canvas.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -26,7 +36,6 @@ public class Window extends JFrame {
                 System.out.println(canvas.shapeDrawing.getXPosition());
                 canvas.shapeDrawing.setYPosition((int) canvas.getMousePosition().getY());
                 System.out.println(canvas.shapeDrawing.getYPosition());
-                canvas.shapeDrawing.setShape('o');
                 System.out.println(canvas.shapeDrawing.getShape());
 
                 canvas.repaint();
