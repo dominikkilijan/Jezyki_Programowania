@@ -33,8 +33,8 @@ public class Shape {
     public void draw(Graphics2D g) {
         g.setColor(Color.black);
         switch (shape) {
-            case 'o' -> g.fillOval(this.xPosition,this.yPosition,20,30);
-            case 'r' -> g.fillRect(this.xPosition,this.yPosition,20,30);
+            case 'o' -> g.fillOval(this.xPosition,this.yPosition,30,40);
+            case 'r' -> g.fillRect(this.xPosition,this.yPosition,30,40);
             case 'c' -> g.fillOval(this.xPosition,this.yPosition,30,30);
             case 's' -> g.fillRect(this.xPosition,this.yPosition,30,30);
         }
