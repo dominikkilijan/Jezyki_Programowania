@@ -14,7 +14,6 @@ public class Window extends JFrame {
     Integer i=0;
     Canvas canvas = new Canvas();
 
-
     Window() {
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setResizable(false);
@@ -25,19 +24,13 @@ public class Window extends JFrame {
             @Override
             public void keyTyped(KeyEvent e) {
                 canvas.shapeDrawing.setShape(e.getKeyChar());
-                System.out.println(canvas.shapeDrawing.getShape());
             }
         });
         canvas.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 canvas.shapeDrawing.setXPosition((int) canvas.getMousePosition().getX());
-
-                System.out.println(canvas.shapeDrawing.getXPosition());
                 canvas.shapeDrawing.setYPosition((int) canvas.getMousePosition().getY());
-                System.out.println(canvas.shapeDrawing.getYPosition());
-                System.out.println(canvas.shapeDrawing.getShape());
-
                 canvas.repaint();
             }
         });
@@ -60,9 +53,6 @@ public class Window extends JFrame {
                     case 2 -> runButton.setLocation(400, 300);
                     case 3 -> runButton.setLocation(20, 300);
                 }
-                System.out.println((frame.getMousePosition()));
-                System.out.println(( frame.getMousePosition().getX() ));
-                System.out.println(( frame.getMousePosition().getY() ));
             }
         });
         runButton.addMouseListener(new MouseAdapter() {

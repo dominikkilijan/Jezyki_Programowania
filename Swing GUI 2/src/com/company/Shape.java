@@ -6,9 +6,7 @@ public class Shape {
     Integer xPosition;
     Integer yPosition;
     char shape;
-    Shape () {
 
-    }
     public Integer getXPosition() {
         return xPosition;
     }
@@ -33,10 +31,12 @@ public class Shape {
     }
 
     public void draw(Graphics2D g) {
-        g.setColor(Color.blue);
+        g.setColor(Color.black);
         switch (shape) {
             case 'o' -> g.fillOval(this.xPosition,this.yPosition,20,30);
             case 'r' -> g.fillRect(this.xPosition,this.yPosition,20,30);
+            case 'c' -> g.fillOval(this.xPosition,this.yPosition,30,30);
+            case 's' -> g.fillRect(this.xPosition,this.yPosition,30,30);
         }
     }
 }
