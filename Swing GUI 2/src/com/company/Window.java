@@ -1,7 +1,6 @@
 package com.company;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -11,7 +10,8 @@ public class Window extends JFrame {
     JButton cancelButton = new JButton("Cancel");
     JPanel buttonPanel = new JPanel();
     Integer i=0;
-    Canvas canvas = new Canvas(100,100,'o');
+    Canvas canvas = new Canvas();
+
 
     Window() {
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -21,6 +21,14 @@ public class Window extends JFrame {
         canvas.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                canvas.shapeDrawing.setXPosition((int) canvas.getMousePosition().getX());
+
+                System.out.println(canvas.shapeDrawing.getXPosition());
+                canvas.shapeDrawing.setYPosition((int) canvas.getMousePosition().getY());
+                System.out.println(canvas.shapeDrawing.getYPosition());
+                canvas.shapeDrawing.setShape('o');
+                System.out.println(canvas.shapeDrawing.getShape());
+
                 canvas.repaint();
             }
         });
@@ -44,8 +52,8 @@ public class Window extends JFrame {
                     case 3 -> runButton.setLocation(20, 300);
                 }
                 System.out.println((frame.getMousePosition()));
-                System.out.println((frame.getMousePosition().getX()));
-                System.out.println((frame.getMousePosition().getY()));
+                System.out.println(( frame.getMousePosition().getX() ));
+                System.out.println(( frame.getMousePosition().getY() ));
             }
         });
         runButton.addMouseListener(new MouseAdapter() {
